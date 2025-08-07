@@ -1,0 +1,211 @@
+<!--
+rupprecht-lab GitHub Pages template
+Author: ChatGPT
+
+How to use:
+1. Create a new GitHub repository named: rupprecht-lab.github.io
+2. Add this file as `index.html` at the repo root and commit.
+3. (Optional) Add asset files or edit content inline below.
+4. To use your custom domain rupprecht-lab.com:
+   - In your DNS registrar, add a CNAME record for `www` pointing to `rupprecht-lab.github.io`.
+   - (For apex domain support) add A records pointing to GitHub Pages IPs: 185.199.108.153, 185.199.109.153, 185.199.110.153, 185.199.111.153
+   - In the GitHub repo -> Settings -> Pages, set Custom domain: rupprecht-lab.com and enable HTTPS.
+   - Alternatively, use an ALIAS/ANAME for the apex if your registrar supports it.
+
+Principal hurdles:
+- No major technical hurdles. The main tasks are: editing content; configuring DNS correctly; and, if you want a CMS for non-technical edits, adding a CMS (Netlify CMS, Forestry, or using WordPress) which requires extra setup.
+- If you need publication automation (BibTeX parsing, citation lists), we can add a simple JS/BibTeX parser or use a static site generator (Jekyll) to automate it.
+
+Below is a single-file static template (HTML + CSS + a little JS) designed for GitHub Pages. Customize the text, images, and colors.
+-->
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Rupprecht Lab</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <meta name="description" content="Rupprecht Lab — Systems Neuroscience">
+  <style>
+    :root{
+      --accent:#0b5fff; /* primary color — edit to match Poskanzer palette */
+      --muted:#6b7280;
+      --bg:#fff;
+      --max-width:1100px;
+      --radius:12px;
+      font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+      color: #111827;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;background:var(--bg);line-height:1.5}
+    .container{max-width:var(--max-width);margin:0 auto;padding:28px}
+
+    /* Header */
+    header{display:flex;align-items:center;justify-content:space-between;padding:18px 0}
+    .brand{display:flex;align-items:center;gap:12px}
+    .logo{width:56px;height:56px;border-radius:10px;background:linear-gradient(135deg,var(--accent),#7cc0ff);display:flex;align-items:center;justify-content:center;color:white;font-weight:700}
+    nav a{margin-left:18px;text-decoration:none;color:var(--muted);font-weight:600}
+    nav a.cta{background:var(--accent);color:white;padding:8px 12px;border-radius:8px}
+
+    /* Hero */
+    .hero{display:flex;gap:36px;align-items:center;padding:34px 0}
+    .hero-left{flex:1}
+    .title{font-size:34px;font-weight:700;margin:0}
+    .subtitle{color:var(--muted);margin-top:12px}
+    .hero-actions{margin-top:18px}
+    .btn{display:inline-block;padding:10px 14px;border-radius:10px;text-decoration:none;font-weight:600}
+    .btn-primary{background:var(--accent);color:white}
+    .btn-outline{border:1px solid #e5e7eb;color:var(--muted)}
+    .hero-right{width:320px}
+    .card{background:#fbfdff;border-radius:14px;padding:18px;box-shadow:0 6px 18px rgba(12,20,50,0.06)}
+
+    /* Sections */
+    section{padding:34px 0;border-top:1px solid #f3f4f6}
+    h2{margin:0 0 18px 0;font-size:20px}
+
+    /* People grid */
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:18px}
+    .person{background:white;border-radius:12px;padding:14px;display:flex;gap:12px;align-items:center}
+    .avatar{width:64px;height:64px;border-radius:8px;background:linear-gradient(135deg,#eef2ff,#fff);display:flex;align-items:center;justify-content:center;font-weight:700;color:#111}
+    .p-meta{font-size:14px}
+    .p-name{font-weight:700}
+    .p-role{color:var(--muted);margin-top:4px;font-size:13px}
+
+    /* Publications */
+    .pubs{list-style:none;padding:0;margin:0}
+    .pubs li{padding:10px 0;border-bottom:1px dashed #f3f4f6}
+
+    /* Footer */
+    footer{padding:28px 0;color:var(--muted);font-size:14px}
+
+    /* Responsive */
+    @media (max-width:760px){
+      .hero{flex-direction:column}
+      .hero-right{width:100%}
+      nav{display:none}
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="brand">
+        <div class="logo">R</div>
+        <div>
+          <div style="font-weight:700">Rupprecht Lab</div>
+          <div style="font-size:13px;color:var(--muted)">Systems Neuroscience • University</div>
+        </div>
+      </div>
+      <nav>
+        <a href="#about">About</a>
+        <a href="#people">People</a>
+        <a href="#research">Research</a>
+        <a href="#publications">Publications</a>
+        <a href="#contact" class="cta">Contact</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="hero-left">
+          <h1 class="title">Understanding neural circuits for behaviour</h1>
+          <p class="subtitle">We study how neural activity in the brain gives rise to perception, decision-making and movement using a combination of electrophysiology, imaging and computational models.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#research">Our research</a>
+            <a class="btn btn-outline" href="#people">Meet the lab</a>
+          </div>
+        </div>
+        <div class="hero-right">
+          <div class="card">
+            <strong>News</strong>
+            <p style="margin-top:8px;color:var(--muted);font-size:14px">Postdoc position open — apply by Sep 15, 2025. <a href="#">Read more</a></p>
+          </div>
+        </div>
+      </section>
+
+      <section id="about">
+        <h2>About the lab</h2>
+        <p style="color:var(--muted);max-width:70%">The Rupprecht lab combines experiments and theory to uncover the circuits that control natural behaviour in rodents. We publish in top neuroscience journals and make our datasets and code openly available.</p>
+      </section>
+
+      <section id="people">
+        <h2>People</h2>
+        <div class="grid">
+          <div class="person">
+            <div class="avatar">AR</div>
+            <div>
+              <div class="p-meta"><div class="p-name">Dr. A. Rupprecht</div><div class="p-role">Principal Investigator</div></div>
+            </div>
+          </div>
+          <div class="person">
+            <div class="avatar">LP</div>
+            <div>
+              <div class="p-meta"><div class="p-name">L. Postdoc</div><div class="p-role">Postdoctoral Researcher</div></div>
+            </div>
+          </div>
+          <div class="person">
+            <div class="avatar">GS</div>
+            <div>
+              <div class="p-meta"><div class="p-name">G. Student</div><div class="p-role">PhD Student</div></div>
+            </div>
+          </div>
+          <div class="person">
+            <div class="avatar">RA</div>
+            <div>
+              <div class="p-meta"><div class="p-name">R. Admin</div><div class="p-role">Lab Manager</div></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="research">
+        <h2>Research</h2>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:18px">
+          <div class="card">
+            <h3 style="margin-top:0">Circuit mechanisms of decision-making</h3>
+            <p style="color:var(--muted);margin-bottom:0">We combine recordings and perturbations to identify how ensembles drive perceptual choices.</p>
+          </div>
+          <div class="card">
+            <h3 style="margin-top:0">Neural codes of movement</h3>
+            <p style="color:var(--muted);margin-bottom:0">We develop models that link spiking patterns to kinematics and behavior.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="publications">
+        <h2>Selected publications</h2>
+        <ul class="pubs">
+          <li><strong>Rupprecht et al.</strong> (2024) Title of a high-impact paper. <em>Nature Neuroscience</em>.</li>
+          <li><strong>Rupprecht et al.</strong> (2023) Another paper. <em>Neuron</em>.</li>
+          <li><strong>Rupprecht et al.</strong> (2022) Methods and code release. <em>eLife</em>.</li>
+        </ul>
+        <p style="margin-top:10px;font-size:13px;color:var(--muted)">Tip: To automate publications, add a `publications.bib` and a small script (or migrate to Jekyll/academic theme).</p>
+      </section>
+
+      <section id="contact">
+        <h2>Contact</h2>
+        <p style="color:var(--muted)">Email: <a href="mailto:info@rupprecht-lab.com">info@rupprecht-lab.com</a> · Address: Institute of Neuroscience</p>
+      </section>
+
+    </main>
+
+    <footer>
+      <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap">
+        <div>© <span id="year"></span> Rupprecht Lab</div>
+        <div style="color:var(--muted)">Built with ❤️ • GitHub Pages</div>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    // Small helpers: fill current year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Sample: replace placeholder people with real data (easy to hook to JSON)
+    // You can also maintain a people.json and fetch it to populate the grid dynamically.
+  </script>
+</body>
+</html>
