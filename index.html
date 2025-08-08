@@ -1,24 +1,3 @@
-<!--
-rupprecht-lab GitHub Pages template
-Author: ChatGPT
-
-How to use:
-1. Create a new GitHub repository named: rupprecht-lab.github.io
-2. Add this file as `index.html` at the repo root and commit.
-3. (Optional) Add asset files or edit content inline below.
-4. To use your custom domain rupprecht-lab.com:
-   - In your DNS registrar, add a CNAME record for `www` pointing to `rupprecht-lab.github.io`.
-   - (For apex domain support) add A records pointing to GitHub Pages IPs: 185.199.108.153, 185.199.109.153, 185.199.110.153, 185.199.111.153
-   - In the GitHub repo -> Settings -> Pages, set Custom domain: rupprecht-lab.com and enable HTTPS.
-   - Alternatively, use an ALIAS/ANAME for the apex if your registrar supports it.
-
-Principal hurdles:
-- No major technical hurdles. The main tasks are: editing content; configuring DNS correctly; and, if you want a CMS for non-technical edits, adding a CMS (Netlify CMS, Forestry, or using WordPress) which requires extra setup.
-- If you need publication automation (BibTeX parsing, citation lists), we can add a simple JS/BibTeX parser or use a static site generator (Jekyll) to automate it.
-
-Below is a single-file static template (HTML + CSS + a little JS) designed for GitHub Pages. Customize the text, images, and colors.
--->
-
 <!doctype html>
 <html lang="en">
 <head>
@@ -28,10 +7,10 @@ Below is a single-file static template (HTML + CSS + a little JS) designed for G
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-  <meta name="description" content="Rupprecht Lab — Systems Neuroscience">
+  <meta name="description" content="Rupprecht Lab — Neuroscience of Learning">
   <style>
     :root{
-      --accent:#0b5fff; /* primary color — edit to match Poskanzer palette */
+      --accent:#0b5fff;
       --muted:#6b7280;
       --bg:#fff;
       --max-width:1100px;
@@ -96,7 +75,7 @@ Below is a single-file static template (HTML + CSS + a little JS) designed for G
         <div class="logo">R</div>
         <div>
           <div style="font-weight:700">Rupprecht Lab</div>
-          <div style="font-size:13px;color:var(--muted)">Systems Neuroscience • University</div>
+          <div style="font-size:13px;color:var(--muted)">Neuroscience of Learning • University of Zurich</div>
         </div>
       </div>
       <nav>
@@ -111,8 +90,8 @@ Below is a single-file static template (HTML + CSS + a little JS) designed for G
     <main>
       <section class="hero">
         <div class="hero-left">
-          <h1 class="title">Understanding neural circuits for behaviour</h1>
-          <p class="subtitle">We study how neural activity in the brain gives rise to perception, decision-making and movement using a combination of electrophysiology, imaging and computational models.</p>
+          <h1 class="title">Unraveling neuronal plasticity with closed-loop experiments</h1>
+          <p class="subtitle">The main purpose of the brain is to adapt our behavior to a changing environment. But how does this occur at the level of individual neurons? In other words, how does a neuron in the brain receive feedback to improve the behavior of the organism? To study these feedback loops, we develop tools to record and control the neuronal activity and behavior in mice. We employ and continually improve two-photon microscopy for calcium imaging in hippocampus, single-cell electrophysiology and closed-loop behavioral paradigms. Key components of our work are careful experimental design as well as in-depth data analysis rather than large-scale experiments or screens. We believe that such well-thought-out experiments and analyses are ideally suited to tackle the most challenging problems in neuroscience.</p>
           <div class="hero-actions">
             <a class="btn btn-primary" href="#research">Our research</a>
             <a class="btn btn-outline" href="#people">Meet the lab</a>
@@ -128,7 +107,30 @@ Below is a single-file static template (HTML + CSS + a little JS) designed for G
 
       <section id="about">
         <h2>About the lab</h2>
-        <p style="color:var(--muted);max-width:70%">The Rupprecht lab combines experiments and theory to uncover the circuits that control natural behaviour in rodents. We publish in top neuroscience journals and make our datasets and code openly available.</p>
+        <p style="color:var(--muted);max-width:70%">
+           Two photon calcium imaging
+
+We use two-photon calcium imaging as the principal method in our group (e.g., link1, link2). This approach permits the recording of neuronal activity in defined neuronal populations in living animals across days. Two-photon calcium imaging enables us to obverse learning-related neuronal activity in behaving mice and to study the stability of neuronal activity patterns.
+
+Two-photon targeted cell-attached recordings
+
+Cell-attached recordings is a variant of patch-clamp recordings that we employ to listen to neuronal activity of individual and visually identified neurons. We use this approach to calibrate calcium imaging recordings with simultaneously recorded electrophysiology link. These technically challenging calibration experiments enable us to better interpret signals obtained with calcium imaging.
+
+Light-sheet microscopy
+
+We take advantage of the ZMB link at the University of Zurich to clear entire mouse brains and  to image the distribution of cells and their processes and projections throughout the brain using mesoSPIM link light-sheet microscopes.
+
+Optogenetics
+
+In addition to the recording of neural activity, we also use several methods to perturb brain circuits, using pharmacology or optogenetics. For example, we have previously used, in collaboration with the Bohacek Lab link, optogenetic stimulation of the locus coeruleus together with two-photon imaging of the hippocampus link.
+
+Mouse behavior
+
+We use spontaneous and task-guided mouse behavior in a head-fixed setting to study the neural processes underlying the respective behavior. We typically spend a lot of time with few individual mice in order to make them learn what we want them to do. The behavior of mice is variable and often unpredictable, and we embrace the challenge of understanding the often unexpected diversity of the spontaneous behaviors and the behavioral strategies that we observe.
+
+Data analysis and deep-learning
+
+As a rule of thumb, we spend more time with the analysis of the experiments compared with the amount of time for their planning and execution. Therefore, every member of the Rupprecht group should be or should become highly proficient in Python and/or Matlab. Among other analysis methods that include correlation functions link and modeling, we also use deep networks to analyze our data. For example, we have developed deep learning methods for spike inference link and have used deep networks for 3D image analysis link or denoising link.
       </section>
 
       <section id="people">
@@ -137,25 +139,25 @@ Below is a single-file static template (HTML + CSS + a little JS) designed for G
           <div class="person">
             <div class="avatar">AR</div>
             <div>
-              <div class="p-meta"><div class="p-name">Dr. A. Rupprecht</div><div class="p-role">Principal Investigator</div></div>
+              <div class="p-meta"><div class="p-name">Dr. Peter Rupprecht</div><div class="p-role">Principal Investigator</div></div>
             </div>
           </div>
           <div class="person">
             <div class="avatar">LP</div>
             <div>
-              <div class="p-meta"><div class="p-name">L. Postdoc</div><div class="p-role">Postdoctoral Researcher</div></div>
+              <div class="p-meta"><div class="p-name">S. Ghosh</div><div class="p-role">PhD student</div></div>
             </div>
           </div>
           <div class="person">
             <div class="avatar">GS</div>
             <div>
-              <div class="p-meta"><div class="p-name">G. Student</div><div class="p-role">PhD Student</div></div>
+              <div class="p-meta"><div class="p-name">Yuanzhao Liu</div><div class="p-role">PhD student</div></div>
             </div>
           </div>
           <div class="person">
             <div class="avatar">RA</div>
             <div>
-              <div class="p-meta"><div class="p-name">R. Admin</div><div class="p-role">Lab Manager</div></div>
+              <div class="p-meta"><div class="p-name">Dr. Dr. med. Anna Maria Reuss</div><div class="p-role">Associated researcher</div></div>
             </div>
           </div>
         </div>
@@ -165,29 +167,65 @@ Below is a single-file static template (HTML + CSS + a little JS) designed for G
         <h2>Research</h2>
         <div style="display:grid;grid-template-columns:1fr 1fr;gap:18px">
           <div class="card">
-            <h3 style="margin-top:0">Circuit mechanisms of decision-making</h3>
-            <p style="color:var(--muted);margin-bottom:0">We combine recordings and perturbations to identify how ensembles drive perceptual choices.</p>
+            <h3 style="margin-top:0">Subcellular signaling in intact brains</h3>
+            <p style="color:var(--muted);margin-bottom:0">The main research focus of the Rupprecht group is to understand learning and plasticity, in particular from the perspective of single neurons. Several projects are ongoing or under planning that are stepping stones towards this goal.
+
+Behavioral timescale synaptic plasticity
+
+Behavioral timescale synaptic plasticity (BTSP)  is an intriguing single-cell plasticity rule that has first been observed in the pyramidal cells of hippocampal CA1link. The plasticity-inducing so-called plateau potentials are accompanied by bursts and dendritic calcium spikes. We would like to better understand the relevance, role and cellular underpinnings of such BTSP events.
+
+Closed-loop experiments
+
+One major limitation of artificial networks is that they are typically not embedded in the natural world. For animals, in contrast, it is crucial that they act upon the world and receive direct feedback about their action in order to be able to learn. We therefore aim to include such feedback loops as essential ingredients in our experimental designs. Mice will interact with virtual environments through their motor actions or their neuronal activity.
+
+Self-organization of neural networks
+
+Similar to animals, single cells need to receive feedback about their own actions. Along this line of thought, we aim to interpret neurons as control units that emit actions (action potentials) and receive feedback about these actions. This viewpoint will be used to conceptualize and model experimental results. In addition, we are also aiming to build models of self-organized neuronal networks in the future.
+
+Calcium signals in astrocytes
+
+Astrocytes are non-neuronal cells in the brain that react to all kinds of inputs and have been involved in neuronal plasticity. We have previously described how astrocytes integrate information about past events, and how calcium signals related to salient past events propagate to the astrocytic soma link. We are interested in better understanding these observations and their role for neuronal circuits.
+</p>
           </div>
           <div class="card">
-            <h3 style="margin-top:0">Neural codes of movement</h3>
-            <p style="color:var(--muted);margin-bottom:0">We develop models that link spiking patterns to kinematics and behavior.</p>
+            <h3 style="margin-top:0">Calcium imaging analysis and spike inference</h3>
+            <p style="color:var(--muted);margin-bottom:0">Calcium imaging is often used as a proxy readout for neuronal action potentials. At the same time, calcium is also an important signaling molecule involved in neuronal plasticity. We have previously worked on measuring and modeling the relationship between recorded calcium signals and action potentials link. As a result, we have set up a large database of simultaneous calcium imaging and cell-attached recordings and have developed a deep learning-based method to predict spike rates from unseen calcium imaging data (CASCADE, link). We are continually working on expanding and improving these approaches.</p>
           </div>
         </div>
       </section>
 
       <section id="publications">
         <h2>Selected publications</h2>
-        <ul class="pubs">
-          <li><strong>Rupprecht et al.</strong> (2024) Title of a high-impact paper. <em>Nature Neuroscience</em>.</li>
-          <li><strong>Rupprecht et al.</strong> (2023) Another paper. <em>Neuron</em>.</li>
-          <li><strong>Rupprecht et al.</strong> (2022) Methods and code release. <em>eLife</em>.</li>
-        </ul>
+         <h3>Preprints</h3>
+         <ul class="pubs">
+           <li><strong>Rupprecht P</strong>, Rozsa M, Fang X, Svoboda K, Helmchen F (2025). Spike inference from calcium imaging data acquired with GCaMP8 indicators. <em>bioRxiv</em>. doi: <a href="https://doi.org/10.1101/2025.03.03.641129">10.1101/2025.03.03.641129</a>.</li>
+           <li><strong>Rupprecht P</strong>, Fan W, Sullivan SJ, Helmchen F, Sdrulla A (2024). Spike inference from mouse spinal cord calcium imaging data. <em>bioRxiv</em>. doi: <a href="https://doi.org/10.1101/2024.07.17.603957">10.1101/2024.07.17.603957</a>.</li>
+           <li>Hu B, Temiz NZ, Chou CN, <strong>Rupprecht P</strong>, Meissner-Bernard C, Titze B, Chung SY, Friedrich RW (2024). Representational learning by optimization of neural manifolds in an olfactory memory network. <em>bioRxiv</em>. doi: <a href="https://doi.org/10.1101/2024.11.17.623906v1">10.1101/2024.11.17.623906v1</a>.</li>
+         </ul>
+         
+         <h3>Peer-reviewed publications</h3>
+         <ul class="pubs">
+           <li>O’Neill PS, Baccino-Calace M, <strong>Rupprecht P</strong>, Lee S, Hao YA, Lin MZ, Friedrich RW, Mueller M, Delvendahl I (2025). A deep learning framework for automated and generalized synaptic event analysis. <em>eLife</em> 13. <a href="#">link</a>.</li>
+           <li>Groos D, Reuss AM*, <strong>Rupprecht P*</strong>, Stachniak T, Han S, Lewis CM, Sych Y, Wieckhorst M, Karayannis T, Aguzzi A, Helmchen F (2025). A distinct hypothalamus-habenula circuit governs risk preference. <em>Nature Neuroscience</em> 28, 361-373. (*equal contribution) <a href="#">link</a>.</li>
+           <li>Meissner-Bernard C, Jenkins B, <strong>Rupprecht P</strong>, Arn Bouldoires E, Zenke F, Friedrich RW§, Frank T§ (2025). Computational functions of precisely balanced neuronal assemblies in an olfactory memory network. <em>Cell Reports</em> 44, 115330. (§ co-senior authors) <a href="#">link</a>.</li>
+           <li><strong>Rupprecht P</strong>, Duss SN, Becker D, Lewis CM, Bohacek J, Helmchen F (2024). Centripetal integration of past events by hippocampal astrocytes and its regulation by the locus coeruleus. <em>Nature Neuroscience</em> 27, 927-939. <a href="#">link</a>.</li>
+           <li>Masala N, Mittag M, Ambrad Giovannetti E, O'Neil DA, Distler FJ, <strong>Rupprecht P</strong>, Helmchen F, Yuste R, Fuhrmann M, Beck H, Wenzel M, Kelly T (2024). Aberrant hippocampal Ca<sup>2+</sup> micro-waves following synapsin-dependent adenoviral expression of Ca<sup>2+</sup> indicators. <em>eLife</em> 13. <a href="#">link</a>.</li>
+           <li><strong>Rupprecht P</strong>, Carta S, Hoffmann A, Echizen M, Kitamura K, Helmchen F§, Friedrich RW§ (2021). A deep learning toolbox for noise-optimized, generalized spike inference from calcium imaging data. <em>Nature Neuroscience</em> 24(9):1324-1337. (§ co-senior authors) <a href="#">link</a>.</li>
+           <li>Schoenfeld G*, Carta S*, <strong>Rupprecht P</strong>, Ayaz A, Helmchen F (2021). In vivo calcium imaging of CA3 pyramidal neuron populations in adult mouse hippocampus. <em>eNeuro</em> 8(4):ENEURO.0023-21.2021. (*equal contribution) <a href="#">link</a>.</li>
+           <li>Huang KH, <strong>Rupprecht P</strong>, Frank T, Kawakami K, Bouwmeester T, Friedrich RW (2020). A virtual reality system to analyze neural activity and behavior in adult zebrafish. <em>Nature Methods</em> 17(3), 343-351. <a href="#">link</a>.</li>
+           <li><strong>Rupprecht P</strong>, Friedrich RW (2018). Precise synaptic balance in the zebrafish homolog of olfactory cortex. <em>Neuron</em> 100(3), 669-683. <a href="#">link</a>.</li>
+           <li>Berens P, Freeman J, Deneux T, Chenkov N, McColgan T, Speiser A, Macke JH, Turaga SC, Mineault P, <strong>Rupprecht P</strong>, Gerhard S, Friedrich RW, Friedrich J, Paninski L, Pachitariu M, Harris KD, Bolte B, Machado TA, Ringach D, Stone J, Rogerson LE, Sofroniew NJ, Reimer J, Froudarakis E, Euler T, Roso MR, Theis L, Tolias AS, Bethge M (2018). Community-based benchmarking improves spike rate inference from two-photon calcium imaging data. <em>PLoS Computational Biology</em> 14(5), e1006157. <a href="#">link</a>.</li>
+           <li>Jacobson GA, <strong>Rupprecht P</strong>, Friedrich RW (2018). Experience-dependent plasticity of odor representations in the telencephalon of zebrafish. <em>Current Biology</em> 28(1), 1-14. <a href="#">link</a>.</li>
+           <li><strong>Rupprecht P</strong>, Prendergast A, Wyart C, Friedrich RW (2016). Remote z-scanning with a macroscopic voice coil motor for fast 3D multiphoton laser scanning microscopy. <em>Biomedical Optics Express</em> 7(5), 1656-1671. <a href="#">link</a>.</li>
+           <li><strong>Rupprecht P</strong>, Prevedel R, Groessl F, Haubensak WE, Vaziri A (2015). Optimizing and extending light-sculpting microscopy for fast functional imaging in neuroscience. <em>Biomedical Optics Express</em> 6(2), 353-368. <a href="#">link</a>.</li>
+           <li><strong>Rupprecht P</strong>, Golé L, Rieu JP, Vézy C, Ferrigno R, Mertani HC, Riviere C (2012). A tapered channel microfluidic device for comprehensive cell adhesion analysis, using measurements of detachment kinetics and shear stress-dependent motion. <em>Biomicrofluidics</em> 6(1), 014107. <a href="#">link</a>.</li>
+         </ul>
         <p style="margin-top:10px;font-size:13px;color:var(--muted)">Tip: To automate publications, add a `publications.bib` and a small script (or migrate to Jekyll/academic theme).</p>
       </section>
 
       <section id="contact">
         <h2>Contact</h2>
-        <p style="color:var(--muted)">Email: <a href="mailto:info@rupprecht-lab.com">info@rupprecht-lab.com</a> · Address: Institute of Neuroscience</p>
+        <p style="color:var(--muted)">Email: <a href="mailto:p.t.r.rupprecht-lab@gmail.com">p.t.r.rupprecht-lab@gmail.com</a> · Address: Brain Research Institute, Zurich, Switzerland</p>
       </section>
 
     </main>
@@ -195,17 +233,14 @@ Below is a single-file static template (HTML + CSS + a little JS) designed for G
     <footer>
       <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap">
         <div>© <span id="year"></span> Rupprecht Lab</div>
-        <div style="color:var(--muted)">Built with ❤️ • GitHub Pages</div>
+        <div style="color:var(--muted)">Built with GitHub Pages</div>
       </div>
     </footer>
   </div>
 
   <script>
-    // Small helpers: fill current year
     document.getElementById('year').textContent = new Date().getFullYear();
 
-    // Sample: replace placeholder people with real data (easy to hook to JSON)
-    // You can also maintain a people.json and fetch it to populate the grid dynamically.
   </script>
 </body>
 </html>
